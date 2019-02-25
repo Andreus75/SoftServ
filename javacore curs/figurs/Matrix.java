@@ -4,12 +4,10 @@ public class Matrix {
 
 	    private int[][] matrixTable;
 	 
-	    // конструктор задает размерность матрицы
 	    public Matrix(int m, int n) {
 	        this.matrixTable = new int[m][n];
 	    }
 	 
-	    // получить элемент матрицы в x- строке , в y-столбце
 	    public int get(int x, int y) {
 	        indexOfbound(x, y);
 	        return this.matrixTable[x][y];
@@ -32,23 +30,17 @@ public class Matrix {
 	        return result;
 	    }
 	 
-	    /**
-	     * проверка на выход за пределы массива
-	     * 
-	     * @param x
-	     * @param y
-	     */
+// перевірка чи не виходить елемент за розміри матриці
+
 	     private void indexOfbound(int x, int y){
 	        if (x >= this.matrixTable.length || y >= this.matrixTable[x].length) {
-	            throw new IndexOutOfBoundsException("вы вывалились за пределы массива , думайте что пишите");
+	            throw new IndexOutOfBoundsException("ви за границьою масива");
 	        }
 	        
 	}
-	    /**
-	     * метод поиска количества строк , в которых попадаются одновременно два числа
-	     *
-	     * @return
-	     */
+	     
+//	    метод пошуку кількості рядків , в яких попадаються одночасно два числа
+	
 	    public int elempoiskStrok(int value1, int value2) {
 	        int res = 0;
 	        for (int i = 0; i < this.matrixTable.length; i++) {

@@ -9,11 +9,11 @@ public class Start {
  
     public void startPO(Scanner sc) {
         boolean exit = false;
-        System.out.println("Необходимо создать матрицу");
+        System.out.println("Створюєм матрицю");
         int m;
         int n;
         Random r = new Random();
-        matrix = new Matrix(m = menuvvoda("Укажите количество строк", sc), n = menuvvoda("Укажите количество столбцов", sc));
+        matrix = new Matrix(m = menuvvoda("Вкажіть кількість рядків", sc), n = menuvvoda("Вкажіть кількість колонок", sc));
         for(int i = 0; i < m; i++) {
             		for(int j = 0; j < n; j++) {
             			matrix.put(i, j, r.nextInt(10));
@@ -24,13 +24,13 @@ public class Start {
             int menuinput = sc.nextInt();
             if (menuinput == 1) {
             	
-                matrix.put(menuvvoda("Укажите строку", sc), menuvvoda("Укажите столбец", sc), menuvvoda("Значение", sc));
+                matrix.put(menuvvoda("Вкажіть рядок", sc), menuvvoda("Вкажіть колонку", sc), menuvvoda("Значення", sc));
             } else if (menuinput == 2) {
-                matrix.get(menuvvoda("Укажите строку", sc), menuvvoda("Укажите столбец", sc));
+                matrix.get(menuvvoda("Вкажіть рядок", sc), menuvvoda("Вкажіть колонку", sc));
             } else if (menuinput == 3) {
                 System.out.println(this.matrix.toString());
             } else if (menuinput == 4) {
-                System.out.println("Количество строк, содержащих элементы = " + this.matrix.elempoiskStrok(menuvvoda("Укажите первый элемент поиска",sc), menuvvoda("Укажите второй элемент поиска", sc)));
+                System.out.println("Кількість рядків = " + this.matrix.elempoiskStrok(menuvvoda("Вкажіть перший елемент пошуку",sc), menuvvoda("Вкажіть другий елемент пошуку", sc)));
             } else if (menuinput == 5) {
                 exit = true;
  
@@ -45,11 +45,11 @@ public class Start {
  
     private void programMenu() {
         System.out.println(
-                "Выберете пункт меню:" + "\n"
-                        + "1. Добавить элемент в матрицу" + "\n"
-                        + "2. Получить элемент из координат" + "\n"
-                        + "3. Вывести на печать  матрицу" + "\n"
-                        + "4. Посчитать количество содержжащих 1, и 2" + "\n"
+                "Виберіть пункт меню:" + "\n"
+                        + "1. Добавити елемент в матрицю" + "\n"
+                        + "2. Отримати елемент з матриці" + "\n"
+                        + "3. Подивитись матрицю" + "\n"
+                        + "4. Порахувати кількісь, що містить 1, і 2" + "\n"
                         + "5. exit" + "\n"
  
         );
